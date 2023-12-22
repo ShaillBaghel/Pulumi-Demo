@@ -1,0 +1,116 @@
+{
+    "name": "Procurement Sciences AI",
+    "build": {"dockerfile": "Dockerfile"},
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "streetsidesoftware.code-spell-checker",
+          "GitHub.vscode-github-actions",
+          "ms-azuretools.azure-dev",
+          "ms-azuretools.vscode-azurefunctions",
+          "ms-azuretools.vscode-bicep",
+          "ms-azuretools.vscode-docker",
+          "ms-vscode.js-debug",
+          "ms-vscode.vscode-node-azure-pack"
+        ]
+      }
+    },
+    "forwardPorts": [3000],
+    "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {
+        "moby": true,
+        "azureDnsAutoDetection": true,
+        "installDockerBuildx": true,
+        "version": "latest",
+        "dockerDashComposeVersion": "v2"
+      },
+      "ghcr.io/azure/azure-dev/azd:latest": {},
+      "ghcr.io/devcontainers/features/azure-cli:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers/features/dotnet:2": {
+        "version": "6.0"
+      },
+      "ghcr.io/mpriscella/features/sops:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers-contrib/features/pnpm:2": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers-contrib/features/projen:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers/features/powershell:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers-contrib/features/pulumi:1": {
+        "bashCompletion": true,
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers-contrib/features/snyk-cli:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers-contrib/features/starship:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers-contrib/features/tailscale:1": {},
+      "ghcr.io/devcontainers-contrib/features/jest:2": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers/features/common-utils:2": {
+        "installZsh": true,
+        "configureZshAsDefaultShell": true,
+        "installOhMyZsh": true,
+        "installOhMyZshConfig": true,
+        "upgradePackages": true,
+        "username": "automatic",
+        "userUid": "automatic",
+        "userGid": "automatic"
+      },
+      "ghcr.io/devcontainers-contrib/features/ts-node:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers-contrib/features/wget-apt-get:1": {},
+      "ghcr.io/devcontainers-contrib/features/wireguard-apt-get:1": {},
+      "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+        "plugins": "ssh-agent npm",
+        "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
+        "username": "vscode"
+      },
+      "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {
+        "allowJqRcVersion": true,
+        "jqVersion": "latest",
+        "yqVersion": "latest",
+        "gojqVersion": "latest",
+        "xqVersion": "latest",
+        "jaqVersion": "latest"
+      },
+      "ghcr.io/dhoeric/features/google-cloud-cli:1": {
+        "installGkeGcloudAuthPlugin": true
+      },
+      "ghcr.io/devcontainers/features/node:1": {},
+      "ghcr.io/rchaganti/vsc-devcontainer-features/azurebicep:1": {},
+      "ghcr.io/stuartleeks/dev-container-features/azure-cli-persistence:0": {},
+      "ghcr.io/rio/features/k9s:1": {},
+      "ghcr.io/jsburckhardt/devcontainer-features/zarf:1": {},
+      "ghcr.io/devcontainers-contrib/features/typescript:2": {},
+      "ghcr.io/devcontainers/features/python:1": {},
+      "ghcr.io/jasonthedeveloper/features/sbom:1": {
+        "version": "latest",
+        "alias": "sbom-tool"
+      },
+      "ghcr.io/dapr/cli/dapr-cli:0": {
+        "version": "latest"
+      },
+      "ghcr.io/lee-orr/rusty-dev-containers/zellij:0": {},
+      "ghcr.io/azure/azure-dev/azd:0": {
+        "version": "stable"
+      },
+      "ghcr.io/devcontainers-contrib/features/cz-cli:1": {
+        "version": "latest"
+      }
+    },
+      "postStartCommand": "( (dotnet tool install --global Microsoft.DataApiBuilder) || (dotnet tool update --global Microsoft.DataApiBuilder)) && (npm install commitizen semantic-release @semantic-release/commit-analyzer standard-version semantic-release) && (@commitlint/{cli,config-conventional} commitizen cz-conventional-changelog aicommits semantic-release @semantic-release/commit-analyzer standard-version semantic-release @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/github @semantic-release/git @semantic-release/npm)",
+    "postCreateCommand": "( (dotnet tool install --global Microsoft.DataApiBuilder) || (dotnet tool update --global Microsoft.DataApiBuilder)) && (npm install commitizen semantic-release @semantic-release/commit-analyzer standard-version semantic-release) && (@commitlint/{cli,config-conventional} commitizen cz-conventional-changelog aicommits semantic-release @semantic-release/commit-analyzer standard-version semantic-release @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/github @semantic-release/git @semantic-release/npm)"
+  }
+  
